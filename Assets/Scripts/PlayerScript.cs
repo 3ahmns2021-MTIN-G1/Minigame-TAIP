@@ -5,16 +5,20 @@ using UnityEngine;
 public class PlayerScript : MonoBehaviour
 {
 
-    public Rigidbody rb;
+    private Rigidbody rb;
     public string links;
     public string rechts;
     public string oben;
+    public string schießen;
     public int moveForce;
     public int jumpForce;
+    public GameObject kugel;
+    private GameObject kugelNeu;
 
     // Start is called before the first frame update
     void Start()
     {
+        
         rb = gameObject.GetComponent<Rigidbody>();
         rb.freezeRotation = true;
 
@@ -23,7 +27,6 @@ public class PlayerScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
         if (Input.GetKeyDown(links))
         {
             rb.AddForce(new Vector3(-moveForce, 0, 0),ForceMode.Force);
@@ -42,5 +45,10 @@ public class PlayerScript : MonoBehaviour
       
         }
 
+        else if (Input.GetKeyDown(schießen))
+        {
+            kugelNeu = Instantiate(kugel, new Vector3(gameObject.transform.position.x + 0.5f, gameObject.transform.position.y, gameObject.transform.position.z), Quaternion.identity);
+            kugelNeu.GetComponent<Rigidbody>().AddForce(new Vector3(500, 0, 0), ForceMode.Force);
+        }
     }
 }

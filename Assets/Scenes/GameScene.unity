@@ -155,7 +155,7 @@ Rigidbody:
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 112
+  m_Constraints: 120
   m_CollisionDetection: 0
 --- !u!136 &1992800
 CapsuleCollider:
@@ -242,13 +242,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 019f95ad23156499f930f18fca7a145a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rb: {fileID: 0}
   links: left
   rechts: right
   oben: up
-  unten: down
-  moveForce: 100
+  "schie\xDFen": space
+  moveForce: 200
   jumpForce: 250
+  kugel: {fileID: 6400224861118168743, guid: 50a70a858fb954b5691781f8d914cdd7, type: 3}
 --- !u!1 &96400869
 GameObject:
   m_ObjectHideFlags: 0
@@ -282,13 +282,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 019f95ad23156499f930f18fca7a145a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rb: {fileID: 0}
   links: a
   rechts: d
   oben: w
-  unten: s
-  moveForce: 100
+  "schie\xDFen": s
+  moveForce: 200
   jumpForce: 250
+  kugel: {fileID: 6400224861118168743, guid: 50a70a858fb954b5691781f8d914cdd7, type: 3}
 --- !u!54 &96400871
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -303,7 +303,7 @@ Rigidbody:
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 112
+  m_Constraints: 120
   m_CollisionDetection: 0
 --- !u!136 &96400872
 CapsuleCollider:

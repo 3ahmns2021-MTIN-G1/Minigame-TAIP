@@ -7,6 +7,7 @@ public class ProjektilScript : MonoBehaviour
 
     private float time;
     public float destroyTime;
+    public int schaden;
 
     // Update is called once per frame
     void Update()
@@ -16,5 +17,15 @@ public class ProjektilScript : MonoBehaviour
         {
             Destroy(gameObject);
         }
+    }
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        if(collision.gameObject.tag == "Player")
+        {
+            collision.gameObject.GetComponent<PlayerScript>().health -= schaden;
+            Destroy(gameObject);
+        }
+        
     }
 }

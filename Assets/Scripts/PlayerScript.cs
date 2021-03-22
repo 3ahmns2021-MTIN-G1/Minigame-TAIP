@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class PlayerScript : MonoBehaviour
 {
@@ -14,6 +15,8 @@ public class PlayerScript : MonoBehaviour
     public int jumpForce;
     public GameObject kugel;
     private GameObject kugelNeu;
+    public int health;
+    public Text scoreText;
 
     // Start is called before the first frame update
     void Start()
@@ -27,6 +30,8 @@ public class PlayerScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        scoreText.text = health.ToString();
+
         if (Input.GetKeyDown(links))
         {
             rb.AddForce(new Vector3(-moveForce, 0, 0),ForceMode.Force);

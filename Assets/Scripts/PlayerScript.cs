@@ -7,16 +7,18 @@ public class PlayerScript : MonoBehaviour
 {
 
     private Rigidbody rb;
-    public string links;
-    public string rechts;
-    public string oben;
-    public string schießen;
+    public KeyCode links;
+    public KeyCode rechts;
+    public KeyCode oben;
+    public KeyCode schießen;
     public int moveForce;
     public int jumpForce;
     public GameObject kugel;
     private GameObject kugelNeu;
     public int health;
     public Text scoreText;
+    public GameObject firepoint;
+    public Vector3 shootForce;
 
     // Start is called before the first frame update
     void Start()
@@ -34,26 +36,26 @@ public class PlayerScript : MonoBehaviour
 
         if (Input.GetKeyDown(links))
         {
-            rb.AddForce(new Vector3(-moveForce, 0, 0),ForceMode.Force);
+            rb.AddRelativeForce(new Vector3(-moveForce, 0, 0),ForceMode.Force);
            
         }
 
         else if (Input.GetKeyDown(rechts))
         {
-            rb.AddForce(new Vector3(moveForce, 0, 0), ForceMode.Force);
+            rb.AddRelativeForce(new Vector3(moveForce, 0, 0), ForceMode.Force);
           
         }
 
         else if (Input.GetKeyDown(oben))
         {
-            rb.AddForce(new Vector3(0, jumpForce, 0), ForceMode.Force);
+            rb.AddRelativeForce(new Vector3(0, jumpForce, 0), ForceMode.Force);
       
         }
 
         else if (Input.GetKeyDown(schießen))
         {
-            kugelNeu = Instantiate(kugel, new Vector3(gameObject.transform.position.x + 0.5f, gameObject.transform.position.y, gameObject.transform.position.z), Quaternion.identity);
-            kugelNeu.GetComponent<Rigidbody>().AddForce(new Vector3(500, 0, 0), ForceMode.Force);
+            kugelNeu = Instantiate(kugel, firepoint.transform.position, firepoint.transform.rotation);
+            kugelNeu.GetComponent<Rigidbody>().AddRelativeForce(shootForce);
         }
     }
 }

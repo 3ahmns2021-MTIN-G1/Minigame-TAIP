@@ -226,7 +226,8 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 4.47, y: 0.42, z: -2.194411}
   m_LocalScale: {x: 0.31394836, y: 0.4591495, z: 0.31394836}
-  m_Children: []
+  m_Children:
+  - {fileID: 974657649}
   m_Father: {fileID: 0}
   m_RootOrder: 12
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -242,15 +243,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 019f95ad23156499f930f18fca7a145a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  links: left
-  rechts: right
-  oben: up
-  "schie\xDFen": space
+  links: 276
+  rechts: 275
+  oben: 273
+  "schie\xDFen": 32
   moveForce: 200
   jumpForce: 250
   kugel: {fileID: 6400224861118168743, guid: 50a70a858fb954b5691781f8d914cdd7, type: 3}
   health: 100
   scoreText: {fileID: 1141558404}
+  firepoint: {fileID: 974657648}
+  shootForce: {x: -500, y: 0, z: 0}
 --- !u!1 &96400869
 GameObject:
   m_ObjectHideFlags: 0
@@ -284,15 +287,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 019f95ad23156499f930f18fca7a145a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  links: a
-  rechts: d
-  oben: w
-  "schie\xDFen": s
+  links: 97
+  rechts: 100
+  oben: 119
+  "schie\xDFen": 115
   moveForce: 200
   jumpForce: 250
   kugel: {fileID: 6400224861118168743, guid: 50a70a858fb954b5691781f8d914cdd7, type: 3}
   health: 100
   scoreText: {fileID: 1696495950}
+  firepoint: {fileID: 573465275}
+  shootForce: {x: 500, y: 0, z: 0}
 --- !u!54 &96400871
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -378,7 +383,8 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -3.67, y: 0.76, z: -2.194411}
   m_LocalScale: {x: 0.31394836, y: 0.4591495, z: 0.31394836}
-  m_Children: []
+  m_Children:
+  - {fileID: 573465276}
   m_Father: {fileID: 0}
   m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -472,6 +478,36 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &573465275
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 573465276}
+  m_Layer: 0
+  m_Name: Firepoint_Player_1
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &573465276
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 573465275}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 2.39, y: 0.29, z: -0.1}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 96400875}
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &664370276
 GameObject:
@@ -814,6 +850,36 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 90}
+--- !u!1 &974657648
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 974657649}
+  m_Layer: 0
+  m_Name: Firepoint_Player_2
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &974657649
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 974657648}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -1.93, y: 0.44000006, z: -0.09999963}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1992803}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1020357299
 GameObject:
   m_ObjectHideFlags: 0

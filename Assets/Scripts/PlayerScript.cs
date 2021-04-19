@@ -10,15 +10,13 @@ public class PlayerScript : MonoBehaviour
     public KeyCode links;
     public KeyCode rechts;
     public KeyCode oben;
+    public KeyCode unten;
     public KeyCode schießen;
     public int moveForce;
-    public int jumpForce;
-    public GameObject kugel;
-    private GameObject kugelNeu;
+    
     public int health;
     public Text scoreText;
-    public GameObject firepoint;
-    public Vector3 shootForce;
+ 
 
     // Start is called before the first frame update
     void Start()
@@ -34,28 +32,28 @@ public class PlayerScript : MonoBehaviour
     {
         scoreText.text = health.ToString();
 
-        if (Input.GetKeyDown(links))
+        if (Input.GetKey(links))
         {
             rb.AddRelativeForce(new Vector3(-moveForce, 0, 0),ForceMode.Force);
            
         }
 
-        else if (Input.GetKeyDown(rechts))
+        else if (Input.GetKey(rechts))
         {
             rb.AddRelativeForce(new Vector3(moveForce, 0, 0), ForceMode.Force);
           
         }
 
-        else if (Input.GetKeyDown(oben))
+        else if (Input.GetKey(oben))
         {
-            rb.AddRelativeForce(new Vector3(0, jumpForce, 0), ForceMode.Force);
+            rb.AddRelativeForce(new Vector3(0, 0, moveForce), ForceMode.Force);
       
         }
 
-        else if (Input.GetKeyDown(schießen))
+        else if (Input.GetKey(unten))
         {
-            kugelNeu = Instantiate(kugel, firepoint.transform.position, firepoint.transform.rotation);
-            kugelNeu.GetComponent<Rigidbody>().AddRelativeForce(shootForce);
+            rb.AddRelativeForce(new Vector3(0, 0, -moveForce), ForceMode.Force);
+
         }
     }
 }

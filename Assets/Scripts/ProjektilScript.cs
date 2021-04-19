@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class ProjektilScript : MonoBehaviour
 {
-
     private float time;
     public float destroyTime;
     public int schaden;
